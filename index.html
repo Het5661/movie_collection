@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Collection</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Movie Collection</h1>
+
+        <div class="movie-form">
+            <input type="text" id="titleInput" placeholder="Movie Title">
+            <input type="text" id="genreInput" placeholder="Genre">
+            <input type="number" id="ratingInput" placeholder="Rating" step="0.1" min="0" max="10">
+            <input type="number" id="yearInput" placeholder="Release Year" min="1900" max="2100">
+            <button onclick="addMovie(movies, { title: titleInput.value, genre: genreInput.value, rating: parseFloat(ratingInput.value), releaseYear: parseInt(yearInput.value) })">Add Movie</button>
+        </div>
+
+        <div class="action-buttons">
+            <button onclick="listMoviesByGenre(movies, 'Sci-Fi'); ">Show Sci-Fi Movies</button>
+            <button onclick="console.log(findHighestRatedMovie(movies));">Find Highest Rated Movie</button>
+            <button onclick="renderMovies()">Show All Movie Titles</button>
+            <button onclick="moviesAfterYear(movies, 2010)">Movies after 2010</button>
+        </div>
+
+        <div class="movie-list" id="movieList"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
